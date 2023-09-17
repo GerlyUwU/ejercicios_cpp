@@ -1,0 +1,142 @@
+EJERCICIOS C++ APRENDIZAJE DE SINTAXIS 
+
+
+
+====================================================================================================================================================================================================
+-----------------------------------------   B L O Q U E   1 :             I N T R O D U C C I O N      Y     E N T R A D A    ---     S A L I D A   ------------------------------------------------
+====================================================================================================================================================================================================
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+/*1. escribe un programa que lea de la entrada estandar dos numeros y muestre
+en la salida estadnar su suma, resta, multiplicacion y division*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    double numero1;
+    double numero2;
+    // double resultado;
+
+    cout << "digite un numero para hacer las operaciones correspondientes, tome en cuenta que este numero ocupara la operacion #1. " << endl;
+    cin >> numero1;
+    cout << "digite otro numero para hacer las operaciones correspondientes: " << endl;
+    cin >> numero2;
+    cout << "resultado de la suma; " << numero1 + numero2 << endl;
+    cout << "resultado de la resta; " << numero1 - numero2 << endl;
+    cout << "resultado de la multiplicacion: " << numero1 * numero2 << endl;
+    cout << "resultado de la division: " << numero1 / numero2 << endl;
+
+    return 0;
+} // FIN DEL PROGRAMA :D
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+/*
+ejercicio 2: escribe un programa que lea de la entrada estandar el precio de un producto y muestre
+en la salida estandar el precio del producto al aplicarle el iva.
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    double precioDelProducto;
+    string nombreDelProducto;
+    cout << "ingrese el precio de su producto" << endl;
+    cin >> precioDelProducto;
+    cout << "Ingrese el nombre de su producto" << endl;
+    cin >> nombreDelProducto;
+    cout << "EL PRODUCTO: " << nombreDelProducto << " tiene un costo con IVA de: " << precioDelProducto * 0.16 + precioDelProducto << " pesos" << endl;
+
+    return 0;
+}
+
+=====================================================================================================================================================================================================
+/*ejercicio 3: Realice un programa que lea de la entrada estandar los siguientes datos de una persona.
+edad: int
+sexo: char
+altura en metros: double
+
+tras leer los datos, el programa debe mostrarlos en la salida estandar
+
+
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int edad;
+    char sexo;
+    double altura;
+
+    // entrada de datos:
+    cout << "\ningrese su edad: " << endl;
+    cin >> edad;
+    cout << "ingrese su sexo: M o H: " << endl;
+    cin >> sexo;
+    cout << "ingrese su altura en metros: " << endl;
+    cin >> altura;
+
+    // salida de datos por consola:
+    cout << "\nLA ALTURA DEL INDIVIDUO ES: " << altura << endl;
+    cout << "\nLA EDAD DEL INDIVIDUO ES: " << edad << endl;
+
+    // texto personalizado para hombres y mujeres
+    if (sexo == 'M')
+    {
+        cout << "\nEL SEXO DEL INDIVIDUO ES FEMENINO" << endl;
+    }
+    else
+    {
+        cout << "\nEL SEXO DEL INDIVIDUO ES MASCULINO" << endl;
+    }
+
+    return 0;
+}
+
+
+====================================================================================================================================================================================================
+-------------------------------------------------------------------    	B  L  O  Q  U  E     2     E  X  P  R  E  S  I  O  N  E  S    --------------------------------------------------------------
+====================================================================================================================================================================================================
+
+//  EJERCICIO 1: Escribe la siguiente expresión como expresion en c++:
+//(a/b) +1
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float a, b, resultado = 0;
+
+    cout << "ingrese el valor de a:" << endl;
+    cin >> a;
+    cout << "ingrese el valor de b:";
+    cin >> b;
+    resultado = (a / b) + 1;
+    cout << "EL RESULTADO DE (a/b)+1 es:" << endl;
+    //metodo de la clase cout para redondear los decimales segun el numero que le pases de parametro
+    cout.precision(2);
+    cout << resultado << endl;
+
+    return 0;
+}
+
+
+
+
+
