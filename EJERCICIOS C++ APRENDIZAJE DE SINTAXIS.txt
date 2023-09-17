@@ -137,6 +137,92 @@ int main()
 }
 
 
+====================================================================================================================================================================================================
+
+
+
+/*
+EJERCICIO 3:Escribe la siguiente expresión como expresion en c++:
+
+            (a+(b/c)/(d+(e/f)))
+
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float a, b, c, d, e, f, resultado = 0;
+
+    cout << "\nINGRESE EL VALOR DE a: " << endl;
+    cin >> a;
+
+    cout << "\nINGRESE EL VALOR DE b: " << endl;
+    cin >> b;
+
+    cout << "\nINGRESE EL VALOR DE c: " << endl;
+    cin >> c;
+
+    cout << "\nINGRESE EL VALOR DE d: " << endl;
+    cin >> d;
+
+    cout << "\nINGRESE EL VALOR DE e: " << endl;
+    cin >> e;
+
+    cout << "\nINGRESE EL VALOR DE f: " << endl;
+    cin >> f;
+
+    resultado = (a + (b / c)) / (d + (e / f));
+
+    cout.precision(3);
+    cout << "\nEL RESULTADO DE LA EXPRESION ES: " << resultado << endl;
+
+    return 0;
+}
+
+
+______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+/*
+EJERCICIO 4:Escribe la siguiente expresión como expresion en c++:
+
+
+            a+(b/(c-d))
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float a, b, c, d, resultado = 0;
+
+    cout << "\nINGRESE EL VALOR DE a: " << endl;
+    cin >> a;
+
+    cout << "\nINGRESE EL VALOR DE b: " << endl;
+    cin >> b;
+
+    cout << "\nINGRESE EL VALOR DE c: " << endl;
+    cin >> c;
+
+    cout << "\nINGRESE EL VALOR DE d: " << endl;
+    cin >> d;
+
+    resultado = (a + (b / (c - d)));
+
+    cout.precision(3);
+    cout << " EL RESULTADO DE LA EXPRESION ES: " << resultado << endl;
+
+    return 0;
+}
+
+
+
 
 
 
