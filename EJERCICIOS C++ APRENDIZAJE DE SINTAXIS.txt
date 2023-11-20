@@ -222,7 +222,9 @@ int main()
 }
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/*
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*
     ejercicio 5: escriba un fragmento de programa que intercambie
                  los valores de dos variables
  */
@@ -252,10 +254,738 @@ int main()
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/*
+    ejercicio 6: escriba un programa que lea la nota
+                 final de cuatro alumnos y calcule la
+                 nota final media de los cuatro alumnos
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int notas;
+    double  aux = 0;
+
+    /*ciclo para calcular ingresar las calificaciones de los alumnos
+    y calcular el total de la suma de las mismas
+    */
+    for (int i = 0; i < 4; i++)
+    {
+        cout << " ingrese la nota del alumno numero: " << (i + 1) << endl;
+        cin >> notas;
+        aux = aux + notas;
+    }
+    double resultado = aux /4;
+    cout<<"el promedio de los 4 alumnos es de: "<<resultado<<endl;
+
+    return 0;
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*
+EJERCICIO 7:
+            La calificacion final de un estudiante es la media
+            ponderada de tres notas: la nota de practicas que
+            cuenta un 30% del total, la nota teorica que cuenta un
+            60% y la nota de participacion que cuenta el 10% restante
+            escriba un programa que lea de la entrada estandar las
+            tres notas del alumno y escriba en la salida estandar
+            su nota final.
+*/
+
+// 100% = practicas30% + teorica60% + participacion10%.
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+    double practica, teorica, participacion, notaFinal = 0;
+    cout << "\n recuerde que tiene que ingresar sus notas en ponderacion de 100 como total del curso."
+         << endl;
+
+    cout << "\n ingrese su nota final de practicas: " << endl;
+    cin >> practica;
+
+    cout << "\n ingrese su nota final de teoria: " << endl;
+    cin >> teorica;
+
+    cout << "\n ingrese su nota final de participacion: " << endl;
+    cin >> participacion;
+
+    practica *= 0.30;
+    teorica *= 0.60;
+    participacion *= 0.10;
+
+    notaFinal = practica + teorica + participacion;
+
+    if (notaFinal >= 60)
+    {
+        cout << "\nFELICIDADES, APROBO ESTE CURSO CON UN INCREIBLE " << notaFinal << "%!!!" << endl;
+    }
+    else
+    {
+        cout << "\nNO HA APROBADO ESTE CURSO :( SU NOTA FINAL FUE DE: " << notaFinal << "%" << endl;
+    }
+    cout << "\n"
+         << endl;
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*
+    ejercicio 8:
+                Escriba un programa que lea de la entrada estandar los dos catetos de u n
+                triangulo rectangulo y escriba en la salida estandar su hipotenusa.
+*/
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    double c, a, b;
+
+    cout << "\ningrese el valor del cateto a: " << endl;
+    cin >> a;
+
+    cout << "\ningrese el valor del cateto b: " << endl;
+    cin >> b;
+    a*=a;
+    b*=b;
+    c=a+b;
+
+    cout<<"\nEl valor de c^2 es igual a: "<<c<<endl; 
+    cout.precision(4);
+    cout<<"\nEl valor de C es igual a: "<<sqrt(c)<<endl;
+
+    return 0;
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*
+ejercicio 9:
+            Realice un programa que calcule el valor que toma la siguiente funcion para
+            unos valores dados de x , y
+            f(x)=sqrt((x)/(y^2-1))
+*/
+
+#include <iostream>
+#include <cmath>
+/*al no declarar el namespace, tenemos que declararlo cada vez que se invoque alguna palabra
+del espacio de nombres:*/
+// using namespace std;
+
+int main()
+{
+    double x, y, f = 0;
+    std::cout << "\ningrese el valor de x:" << std::endl;
+    std::cin >> x;
+
+    std::cout << "\ningrese el valor de y:" << std::endl;
+    std::cin >> y;
+
+    f = (sqrt(x) / (pow(y, 2) - 1));
+    std::cout << "\nEl resultado de la funcion es: " << f << std::endl;
+
+    return 0;
+}
 
 
 
 
 
+
+
+
+
+====================================================================================================================================================================================================
+------------------------------------------------------------   B L O Q U E   3 :            E S T R U C T U R A S     C O N D I C I O N A L E S     ------------------------------------------------
+====================================================================================================================================================================================================
+
+
+/*
+EJERCICIO 1: escriba un programa que lea dos numeros y determine cual
+             ellos es el mayor
+
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int numero1, numero2;
+
+    cout << "\nIngrese un numero: " << endl;
+    cin >> numero1;
+
+    cout << "\nIngrese otro numero: " << endl;
+    cin >> numero2;
+
+    if (numero1 == numero2)
+    {
+        /* code */
+        cout << "\n ambos numeros son iguales ante la ley 7u7" << endl;
+    }
+    else if (numero1 > numero2)
+    {
+        cout << "\nel numero que ingreso primero es mayor que el postero" << endl;
+    }
+
+    else
+    {
+        /* code */
+        cout << "\nel numero que ingreso al ultimo es mayor que el primero" << endl;
+    }
+
+    return 0;
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*
+Ejercicio 2: Escriba un programa que lea tres numeros y determine
+            cual de ellos es el mayor.
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int numero1, numero2, numero3;
+
+    cout << "\n ingrese el primer numero: " << endl;
+    cin >> numero1;
+
+    cout << "\n ingrese el segundo numero: " << endl;
+    cin >> numero2;
+
+    cout << "\n ingrese el tercer  numero: " << endl;
+    cin >> numero3;
+
+
+    if (numero1>numero2 && numero1>numero3)
+    {
+        /* code */
+        cout<<"\n el numero: "<<numero1<<" es el mas grande"<<endl;
+    }
+    else if (numero2>numero1 && numero2>numero3)
+    {
+        /* code */
+        cout<<"\n el numero: "<<numero2<<" es el mas grande"<<endl;
+    }
+    else
+    {
+        /* code */
+        cout<<"\n el numero: "<<numero3<<" es el mas grande"<<endl;
+    }
+    
+}
+
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+
+
+
+/* ejercicio 3:
+                realice un programa que lea un valor entero y determine si se trata de un
+                numero impar o un numero par
+
+
+ */
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int numero1;
+
+    cout<<"ingrese  un numero entero:"<<endl; 
+    cin>>numero1; 
+
+    if (numero1 %2 == 0)
+    {
+        /* code */
+        cout<<"\n el numero es par"<<endl; 
+    }
+    else
+    {
+        /* code */
+         cout<<"\n el numero es impar"<<endl; 
+    }
+    
+
+}
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*
+ejercicio 4:
+            ingrese un numero por teclado y determine si es positivo o no
+*/
+
+#include <iostream>
+
+int main()
+{
+    int numero;
+
+    std::cout << "\n ingrese un numero entero: " << std::endl;
+    std::cin >> numero;
+
+    if (numero == 0)
+    {
+        /* code */
+        std::cout << "\nvaya! parece que ingreso un cero, no se puede determinar" << std::endl;
+    }
+    else if (numero < 0)
+    {
+        /* code */
+        std::cout << "\n el numero que ingreso es negativo " << std::endl;
+    }
+    else
+    {
+        /* code */
+        std::cout << "\n el numero que ingreso es positivo" << std::endl;
+    }
+
+    return 0;
+}
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+/*
+ejercicio 5:
+            escriba un programa que lea de la entrada
+            estandar un caracter e indique en la salida
+            estandar si el caracter es una vocal minuscula
+            o no.
+
+*/
+#include <iostream>
+#include <cctype>
+
+using namespace std;
+
+int main()
+{
+    cout << "\n============================================================" << endl;
+    char letra;
+    cout << "\n ingrese un caracter, sea minusculo o mayusculo" << endl;
+    cin >> letra;
+
+    if (isupper(letra))
+    {
+        cout << "\n el caracter  ingresado es una letra mayuscula " << endl;
+    }
+    else
+    {
+        cout << "\n el caracter  ingresado no es una letra mayuscula " << endl;
+    }
+    // este cout es un espacio entre lineas
+    cout << "\n"
+         << endl;
+    cout << "\n============================================================" << endl;
+    return 0;
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*
+ejercicio 7: 
+            Escriba un programa que solicite una edad 
+            (un entero) e indique en la salida estandar 
+            si la edad introducida esta en el rango 
+            [18-25]
+
+*/
+#include <iostream>
+
+using namespace std; 
+
+int main(){
+    int edad; 
+
+    cout<<"\n ingrese su edad: "<<endl; 
+    cin>>edad; 
+
+
+    if (edad <26 && edad>17)
+    {
+        /* code */
+        cout<<"\n la edad entra en el rango [18-25]"<<endl; 
+
+    }else{
+          cout<<"\n la edad NO entra en el rango [18-25]"<<endl; 
+    }
+
+    
+    return 0;
+    
+}
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+/*
+Ejercicio 8:
+            Escribe un programa que lea de la entrada estandar tres numeros,
+            despues debe leer un cuarto numero e indicar si el numero
+            coincide con alguno de los introducidos con anterioridad.
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int numero1, numero2, numero3, numero4;
+
+    cout << "ingrese el primer numero:" << endl;
+    cin >> numero1;
+
+    cout << "ingrese el segundo numero:" << endl;
+    cin >> numero2;
+
+    cout << "ingrese el tercer numero:" << endl;
+    cin >> numero3;
+
+    cout << "ingrese el numero a comparar:" << endl;
+    cin >> numero4;
+
+    if ((numero1 == numero4) || (numero2 == numero4) || (numero3 == numero4))
+    {
+        cout << "el numero a comparar coindice con alguno de los 3 numeros ingresados anteriormente :)" << endl;
+    }
+    else
+    {
+        cout << "el numero a comparar no coincide con ninguno de los 3 numeros ingresados anteriormente" << endl;
+    }
+    /*
+    este programa calcula SI uno de los 3 numeros coincide con el numero a comparar, mas
+    no regresa el nombre de la variable que coincide con el valor a comparar :) sera
+    para otro ejercicio, pero si lo estuviera haciendo en java eligiria una estructura
+    switch
+    */
+
+    return 0;
+}
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+/*ejercicio 9:
+cambiar un pnumero entero con el mismo valo
+pero en numeros romanos
+
+M = 1000
+D = 500
+C = 100
+L = 50
+X = 10
+V = 5
+I = 1
+
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int numero, unidades, decenas, centenas, millar;
+    cout << "ingrese un numero: " << endl;
+    cin >> numero;
+//supongamos que el usuario ingresa el numero 2152
+// en ese caso dividido el numero seria: 
+//2152 -> 2000+100+50+2
+//te estaras preguntando, neta vas en quinto semestre y no 
+//sabes como pinga dividirlo?, es mas, no sabes como 
+/* 
+hacer un comentario largo??? 
+bueno, el modulo de 10 mueve el punto decimal hacia la 
+izquierda, hace que nos regrese el valor que estamos buscando 
+*/
+
+    unidades = numero%10; 
+    numero /=10;
+
+    decenas = numero%10; 
+    numero /=10; 
+
+    centenas = numero%10; 
+    numero /=10;
+
+    millar = numero %10; 
+    numero /= 10;
+    cout<<unidades<<endl;
+
+ //dividimos los condicionales switch segun el caso 
+
+ switch(millar){
+    case 1:cout<<"M";
+    break; 
+    case 2:cout<<"MM";
+    break; 
+    case 3:cout<<"MMM";
+    break; 
+ }
+
+ switch(centenas){
+    case 1:cout<<"C";
+    break; 
+    case 2:cout<<"CC";
+    break;
+    case 3:cout<<"CCC";
+    break;
+    case 4:cout<<" CD";
+    break;
+    case 5:cout<<" D";
+    break;
+    case 6:cout<<" DC";
+    break;
+    case 7:cout<<"DCC ";
+    break;
+    case 8:cout<<"DCCC ";
+    break;
+    case 9:cout<<"CM ";
+    break;
+    
+ }
+ switch(decenas){
+    case 1:cout<<"X";
+    break;
+    case 2:cout<<"XX";
+    break;
+    case 3:cout<<"XXX";
+    break;
+    case 4:cout<<"XL";
+    break;
+    case 5:cout<<"L";
+    break;
+    case 6:cout<<"LX";
+    break;
+    case 7:cout<<"LXX";
+    break;
+    case 8:cout<<"LXXX";
+    break;
+    case 9:cout<<"XC";
+    break;
+    
+ }
+ switch(unidades){
+    case 1:cout<<"I";
+    break;
+    case 2:cout<<"II";
+    break;
+    case 3:cout<<"III";
+    break;
+    case 4:cout<<"IV";
+    break;
+    case 5:cout<<"V";
+    break;
+    case 6:cout<<"VI";
+    break;
+    case 7:cout<<"VII";
+    break;
+    case 8:cout<<"VIII";
+    break;
+    case 9:cout<<"IX";
+    break;
+
+ }
+
+
+    return 0;
+}
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*EJERCICIO 10:
+mostrar los meses del año, pidiendole al usuario
+un numero entre (1-12 )
+y mostrar el mes al que corresponde
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int mes_numero;
+    cout << "ingrese el numero del mes al que quiere acceder:";
+    cin >> mes_numero;
+    while (mes_numero < 13)
+    {
+        switch (mes_numero)
+        {
+        case 1:
+            cout << "ENERO"<<endl;
+            break;
+        case 2:
+            cout << "FEBRERO"<<endl;
+            break;
+        case 3:
+            cout << "MARZO"<<endl;
+            break;
+        case 4:
+            cout << "ABRIL"<<endl;
+            break;
+        case 5:
+            cout << "MAYO"<<endl;
+            break;
+        case 6:
+            cout << "JUNIO"<<endl;
+            break;
+        case 7:
+            cout << "JULIO"<<endl;
+            break;
+        case 8:
+            cout << "AGOSTO"<<endl;
+            break;
+        case 9:
+            cout << "SEPTIEMBRE"<<endl;
+            break;
+        case 10:
+            cout << "OCTUBRE"<<endl;
+            break;
+        case 11:
+            cout << "NOVIEMBRE"<<endl;
+            break;
+        case 12:
+            cout << "DICIEMBRE"<<endl;
+            break;
+        default:
+            cout << "ingresa un numero valido alcornoque!";
+
+        } // end of  switch
+    mes_numero++;
+    } // end of while
+
+} // end of the main fun
+
+
+/*
+hice modificaciones para que el programa imprima el resto de meses 
+del año desde el mes que se ingresa por que al chile pinches programas 
+aburridos que me estan tocando orita */
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*
+ejercicio 11:
+            hacer un programa que simule un cajero
+            automatico con un saldo inicial del 1000 dolares
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int saldo = 1000;
+    int menu;
+    cout << "Bienvenido al banco" << endl;
+    cout << "A continuación, digite un número para elegir la opción a realizar:" << endl;
+
+    cout << "1.- Retirar dinero" << endl;
+    cout << "2.- Depositar dinero" << endl;
+    cout << "3.- Consultar saldo" << endl;
+    cout << "4.- Salir" << endl;
+    cin >> menu;
+
+    switch (menu)
+    {
+    case 1:
+    {
+        int retiro = 0;
+        cout << "Ingrese la cantidad a retirar: ";
+        cin >> retiro;
+        if (retiro > saldo)
+        {
+            cout << "No tiene el saldo suficiente para realizar esta transacción. Labure más." << endl;
+            break;
+        }
+        else
+        {
+            saldo -= retiro;
+            cout << "Retiro exitoso. El saldo restante es: $" << saldo << ". ¡Vuelva pronto!" << endl;
+        }
+        break;
+    }
+
+    case 2:
+    {
+        int deposito = 0;
+        cout << "Ingrese la cantidad a depositar: ";
+        cin >> deposito;
+        if (deposito > 1000000)
+        {
+            cout << "Me parece que tendrás que declarar ante el SAT esa cantidad. ._. " << endl;
+            break;
+        }
+        else
+        {
+            saldo += deposito;
+            cout << "Depósito exitoso. El saldo actualizado es de: $" << saldo << ". ¡Vuelva pronto!" << endl;
+        }
+        break;
+    }
+
+    case 3:
+        cout << "El saldo actual de la cuenta es: $" << saldo << ". ¡Vuelva pronto!" << endl;
+        break;
+    case 4:
+        cout << "Vuelva pronto. ¡Gracias por usar este servicio!" << endl;
+        break;
+    default:
+        cout << "Vaya, parece que no ingresaste un número válido. Vuelvelo a intentar. :)" << endl;
+    }
+    return 0;
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
