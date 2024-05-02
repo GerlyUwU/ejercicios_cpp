@@ -7,8 +7,10 @@ public class App {
 
         // instanciaremos a un profesor
         Catedratico mag = new Catedratico("MAGDIEL OMAR", "MERCADO CARRILLO", 45, 45000, 46790);
-        Curso curso1 = new Curso("Matemáticas", 30);
-        Curso curso2 = new Curso("Física", 25);
+        Curso curso1 = new Curso("Bases de datos no convencionales", 30);
+        mag.agregarCurso(curso1);
+        Curso curso2 = new Curso("Matematicas discretas", 25);
+        mag.agregarCurso(curso2);
         mag.mostrarDatos();
     }
 
