@@ -47,7 +47,7 @@ public class Catedratico extends Persona {
             System.out.println("no hay cursos por mostrar");
         }else{
             for (Curso curso : cursos) {
-                System.out.println("curso: "+curso.getNombre()+" creditos: "+curso.getCreditos());
+                System.out.println("curso: "+curso.getNombre()+". - creditos: "+curso.getCreditos()+"\n");
             }
         }
     }

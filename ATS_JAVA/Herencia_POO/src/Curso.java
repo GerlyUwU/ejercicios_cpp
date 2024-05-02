@@ -25,6 +25,11 @@ public class Curso {
     }
 
     // Getter method for course credits
+
+    /**
+     *
+     * @return
+     */
     public int getCreditos() {
         return creditos;
     }
