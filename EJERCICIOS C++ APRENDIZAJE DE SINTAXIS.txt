@@ -988,4 +988,173 @@ int main()
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+/*
+ejercicio 12
+            Hacer un menu que considere la siguientes opciones:
+ caso 1: cubo de un numero
+ caso 2: numero par o impar
+ caso 3: salir
+*/
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    double numero1;
+    double resultado;
+    int menu;
+    cout << "ingrese un numero:  " << endl;
+    cin >> numero1;
+
+    cout << "ingrese un numero para elegir una opcion del siguiente"
+         << " menu" << endl;
+    cout << "1.- elevar al cubo el numero que ingreso." << endl;
+    cout << "2.- averiguar si el numero que ingreso es par o impar" << endl;
+    cout << "3.- salir" << endl;
+    cin>>menu;
+
+    switch (menu)
+    {
+    case 1:
+        resultado = pow(numero1, 3);
+        cout << "el resultado es: " << resultado << endl;
+        break;
+    case 2:
+        if (numero1 > 0)
+        {
+            cout << "el numero " << numero1 << " es un numero positivo" << endl;
+        }
+        else
+        {
+            cout << "el numero " << numero1 << " es un numero negativo " << endl;
+        }
+        break;
+    case 3:
+        cout << "Gracias! vuelva pronto :)" << endl;
+        break;
+    default:
+        cout << "vaya! parece que no has ingresado una opcion valida, vuelve a intentarlo lol" << endl;
+    }
+}
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+====================================================================================================================================================================================================
+------------------------------------------------------------   B L O Q U E   4 :            E S T R U C T U R A S   R E P E T I T I V A S           ------------------------------------------------
+====================================================================================================================================================================================================
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*
+ejercicio 1: 
+            realice un programa que solicite de la entrada 
+            estandar un entero del 1 al 10 y muestre en la salida 
+            estandar su tabla de multiplicar.
+*/
+
+#include <iostream>
+//la siguiente libreria ats la utiliza para pausar la ejecucion del programa 
+//para que nosotros decidamos cuando el programa debe parar de ejecutarse.
+#include<stdlib.h>
+
+using namespace std; 
+
+int main(){
+    int numero; 
+    cout<<"ingrese el numero del cual desea obtener su tabla de multiplicar"<<endl; 
+    cin>>numero; 
+
+    for(int i = 1; i<=10;i++){
+        cout<<numero<<"  X   "<<i<<" = "<<numero*i<<endl;
+    }
+
+    cout<<"\n\n";
+    system("pause");
+    return 0;
+}
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+/*
+ejercicio 2:
+            Realice un programa que lea de la entrada
+            estandar numeros hasta que se introduzca
+            un cero, en ese momento el programa debe
+            termitar y mostrar en la salida estandar
+            el numero de valores que cero leidos.
+
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int numero, contador = 0;
+
+    do
+    {
+        cout << "introduzca un numero" << endl;
+        cin >> numero;
+        if (numero > 0)
+        {
+            contador++;
+        }
+    } while (numero != 0);
+
+    cout << "cantidad de numeros ingresados que son mayores a 0: " << contador << endl;
+
+    cout << "\n\n";
+    system("pause");
+    return 0;
+}
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+/*
+ejercicio 3
+            realice un programa que calcule y muestre en la salida estandar la suma de
+            los cuadrados de los primeros 10 numeros enteros mayores que cero.
+*/
+
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+int main()
+{
+    int suma = 0, cuadrado;
+
+    for (size_t i = 1; i < 11; i++)
+    {
+        /* code */
+        cuadrado = i * i;
+        suma += cuadrado;
+    }
+
+    cout << "la suma de los cuadrados de los primeros 10 numeros mayores que cero es: " << suma << endl;
+    getch();
+    return 0;
+}
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
 
