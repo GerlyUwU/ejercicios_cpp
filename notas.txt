@@ -1,0 +1,6 @@
+vamos a crear una nueva base de datos en esta branch 
+esperamos poder hacer una conexion a nuestro programa para poder 
+persistir los datos que estamos ingresando, lo ideal seria 
+que pudieramos integrar una interfaz grafica en conjunto para que 
+sea mas sencillo el ingreso de datos pero eso sera tema para otro 
+sprint 
