@@ -1155,6 +1155,8 @@ int main()
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
+//hoy continuamos con los ejercicios de c++ 
+today we have to continue with the exercises about c++ and basic logic of programing ... 
 
 
 
